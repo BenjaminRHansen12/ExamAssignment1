@@ -1,17 +1,29 @@
 ﻿// Your program should start at this line.
-/*
-Example:
-Move();
-Move();
-Move();
-Turn();
-Move();
-Move();
-Turn();
-Turn();
-Turn();
-Move();
-*/
+
+do 
+{
+    Peek();
+    if (Peek() == true)
+    {
+        Move();
+    } else if (Peek() == false)
+    {
+        TurnRightWay();
+    }
+} while (!AtGoal() == true);
+
+Console.WriteLine("You made it!");
+
+void TurnRightWay()
+{
+    Turn();
+    Peek();
+    if (Peek() == false)
+    {
+        Turn();
+        Turn();
+    }
+}
 
 
 #region Basic functions
